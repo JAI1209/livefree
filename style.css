@@ -106,7 +106,7 @@ button {
 }
 
 .logo-img {
-  height: 52px;
+  height: 80px;
   width: auto;
   transition: transform 0.2s ease;
 }
@@ -232,9 +232,10 @@ button {
   min-height: 90vh;
   background-image: url('assets/hero_img.jpeg');
   background-size: cover;
-  background-position: center 30%;
+  background-position: right center;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   isolation: isolate;
 }
 
@@ -250,6 +251,7 @@ button {
   z-index: 3;
   max-width: 700px;
   color: white;
+  padding-left: 60px;
 }
 
 .hero .eyebrow {

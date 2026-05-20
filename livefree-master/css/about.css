@@ -1,0 +1,324 @@
+body {
+  font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+}
+
+.about-page-main {
+  background: #f9f6f2;
+}
+
+.about-hero {
+  padding: 84px 0;
+  background: #f9f6f2;
+}
+
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.about-hero-copy h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 5vw, 4.3rem);
+  line-height: 1.1;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.about-hero-copy h2 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #e8622a;
+  margin-bottom: 14px;
+}
+
+.about-hero-copy p {
+  font-size: 1.03rem;
+  color: var(--muted);
+  margin-bottom: 24px;
+  max-width: 520px;
+}
+
+.about-hero-media img {
+  width: 100%;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  min-height: 380px;
+  object-fit: cover;
+}
+
+.about-section-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  text-align: center;
+  letter-spacing: 0.08em;
+  margin-bottom: 42px;
+  text-transform: uppercase;
+}
+
+.livefree-values {
+  background: #f9f6f2;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.value-card {
+  background: var(--surface);
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  padding: 30px 24px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.value-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+}
+
+.value-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.value-card p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.founders-section {
+  background: #f9f6f2;
+  padding-top: 24px;
+  padding-bottom: 90px;
+}
+
+.founders-grid {
+  max-width: 920px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.founder-card {
+  background: #fde8de;
+  border-radius: 12px;
+  padding: 34px 28px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.founder-photo {
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 18px;
+  border: 3px solid #ffffff;
+}
+
+.founder-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+
+.founder-name-line {
+  width: 56px;
+  height: 2px;
+  margin: 0 auto 12px;
+  background: #e8622a;
+}
+
+.founder-card h4 {
+  font-size: 0.95rem;
+  color: #e8622a;
+  margin-bottom: 12px;
+}
+
+.founder-card p {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.about-page-dropdown > .about-dropdown-trigger.is-active {
+  color: #e8622a;
+}
+
+.about-page-dropdown > .about-dropdown-trigger.is-active::after {
+  width: 100%;
+}
+
+/* ✅ FIX: anchor the dropdown to the li, not a distant ancestor */
+.about-dropdown-wrap {
+  position: relative;
+}
+
+.about-dropdown {
+  position: absolute;
+  top: calc(100% + 18px);
+  left: 50%;
+  width: max-content;
+  min-width: min(340px, calc(100vw - 48px));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(-8px) scale(0.98);
+  transition: opacity 200ms ease, transform 200ms ease, visibility 200ms ease;
+  z-index: 300;
+}
+
+.about-dropdown::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #ffffff;
+  z-index: 5;
+}
+
+.about-dropdown-header {
+  position: relative;
+  z-index: 6;
+  padding: 16px 20px 10px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #e8622a;
+  text-transform: uppercase;
+  background: #ffffff;
+}
+
+.about-dropdown-divider {
+  position: relative;
+  z-index: 6;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #f0e8e4, #f0e8e4, transparent);
+}
+
+.about-dropdown-option {
+  position: relative;
+  display: block;
+  min-height: 92px;
+  overflow: hidden;
+}
+
+.about-option-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+}
+
+.about-option-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, rgba(30, 27, 26, 0.6) 100%, rgba(30, 27, 26, 0.6) 100%);
+  transition: all 0.3s ease;
+}
+
+.about-option-content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 20px;
+}
+
+.about-option-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #e8622a;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.28);
+}
+
+.about-option-sub {
+  font-size: 0.74rem;
+  color: rgba(253, 251, 251, 0.88);
+  margin-top: 4px;
+}
+
+.about-option-arrow {
+  color: #ffffff;
+  font-size: 1.2rem;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.25s ease;
+}
+
+.about-dropdown-option:hover .about-option-bg,
+.about-dropdown-option.is-active .about-option-bg {
+  transform: scale(1.06);
+}
+
+.about-dropdown-option:hover .about-option-overlay,
+.about-dropdown-option.is-active .about-option-overlay {
+  background: linear-gradient(105deg, rgba(232, 93, 58, 0.4) 100%, rgba(232, 93, 58, 0.4) 100%);
+}
+
+.about-dropdown-option:hover .about-option-arrow,
+.about-dropdown-option.is-active .about-option-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.about-dropdown-wrap.about-open .about-dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
+.site-footer {
+  background: #3d3a36;
+}
+
+.tagline {
+  letter-spacing: 0.02em;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 1024px) {
+  .about-hero-grid,
+  .values-grid,
+  .founders-grid {
+    grid-template-columns: 1fr;
+  }
+}
